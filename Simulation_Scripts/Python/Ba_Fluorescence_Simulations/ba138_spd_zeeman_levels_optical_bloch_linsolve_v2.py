@@ -2,10 +2,9 @@ import numpy as np
 from math import sqrt, cos, sin
 
 
-def ba138_spd_zeeman_linsolve_v2(Delta_SP01, Delta_DP01, Omega_S, Omega_D, theta_s, theta_d):
+def ba138_spd_zeeman_linsolve_v2(Delta_SP01, Delta_DP01, Omega_S, Omega_D, theta_s, theta_d, B_gauss):
     """
     Version 2: Separate polarization angles for S-P and D-P lasers.
-    Different B field value (835 uT).
 
     Parameters:
         Delta_SP01: S-P detuning (rad*MHz)
@@ -14,6 +13,7 @@ def ba138_spd_zeeman_linsolve_v2(Delta_SP01, Delta_DP01, Omega_S, Omega_D, theta
         Omega_D: D-P Rabi frequency (rad*MHz)
         theta_s: S-P laser polarization angle (rad)
         theta_d: D-P laser polarization angle (rad)
+        B_gauss: Magnetic field magnitude (Gauss)
 
     Returns:
         sigma_end: Steady-state density matrix elements
@@ -21,7 +21,7 @@ def ba138_spd_zeeman_linsolve_v2(Delta_SP01, Delta_DP01, Omega_S, Omega_D, theta
     """
     Planck_h = 6.62607015e-34
     uB = 9.274009994e-24
-    B = 1 * 835e-6
+    B = B_gauss * 1e-4
     Delta_zs = 1e-6 * 2 * uB * B / Planck_h
     Delta_zd = 1e-6 * (4 / 5) * uB * B / Planck_h
     Delta_zp = 1e-6 * (2 / 3) * uB * B / Planck_h
