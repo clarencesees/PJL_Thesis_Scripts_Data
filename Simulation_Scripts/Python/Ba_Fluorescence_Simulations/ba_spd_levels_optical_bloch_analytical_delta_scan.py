@@ -15,8 +15,8 @@ def run_delta_scan(Omega_S, Omega_D):
         Delta_D_array: Array of D-P detunings (MHz)
         sigma_PP_end: 2D array of P state populations
     """
-    Delta_S_array = np.arange(-100, 1, 1)  # Range of frequency detunings for S-P in MHz
-    Delta_D_array = np.arange(-100, 101, 1)  # Range of frequency detunings for D-P in MHz
+    Delta_S_array = np.arange(-30, 30, 1)  # Range of frequency detunings for S-P in MHz
+    Delta_D_array = np.arange(-30, 30, 1)  # Range of frequency detunings for D-P in MHz
     sigma_PP_end = np.full((len(Delta_S_array), len(Delta_D_array)), np.nan)
 
     for hh in range(len(Delta_S_array)):

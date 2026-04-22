@@ -1,0 +1,1 @@
+Ba_OpticalPump_Sim_4Levels.m: a MATLAB script for simulating the steady-state population for optical pumping in a 4-level toy model, 2 in the ground state and 2 in the excited state.
